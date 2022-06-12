@@ -23,28 +23,22 @@ CLASS zcl_shopping_tf IMPLEMENTATION.
     lt_data = select itemuid,catergory,classification,item,
                   brand,retpolicy,
                   CASE
-                  when retpolicy <> 'X'
-                   THEN  0
+                   when retpolicy <> 'X'THEN  0
                    ELSE retperiod
                   END AS retperiod,
                   quantity,units,price,currency,discnt,
                   (  price * ( discnt /100 ) ) as red_amt
                  from zshopping_base;
 
-      return Select itemuid,catergory,classification,item,
+      return select itemuid,catergory,classification,item,
                   brand,retpolicy,
-                  case
-                  when retpolicy <> 'X'
-                   then  0
-                   else retperiod
-                  end as retperiod,
+                 concat(concat(retperiod,' '),'days') as retperiod,
                   quantity,units,price,currency,discnt,
-                  case when discnt = 0
-                  then price
-                  else
-                   ( price - red_amt ) end  as final_price
+                  CASE
+                   when discnt = 0 then price
+                   ELSE ( price - red_amt )
+                  END as final_price
                  from :lt_data;
-
-  endmethod.
+  ENDMETHOD.
 
 ENDCLASS.

@@ -9,7 +9,7 @@ returns {
   item                  : abap.char(100);
   brand                 : abap.char(20);
   retpolicy             : abap_boolean;
-  retperiod             : abap.int1;
+  retperiod             : abap.char( 10 );
   quantity              : abap.quan(13,3);
   units                 : abap.unit(3);
   price                 : abap.curr(23,2);
