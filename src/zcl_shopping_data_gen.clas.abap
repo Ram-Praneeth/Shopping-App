@@ -28,13 +28,21 @@ CLASS zcl_shopping_data_gen IMPLEMENTATION.
        createdby = sy-uname  createdat = sy-uzeit lastchangedby = sy-uname   lastchangedat = sy-uzeit local_last_changed_at = sy-uzeit )
 
 
-     ( client = sy-mandt itemuid = '1000000002' catergory = 'AUTOMOBILE' classification = 'VEHICLE' brand = 'HYUNDAI' item = 'HYUNDAI CRETA S PLUS KNIGHT'
-       retpolicy = '' retperiod = 0   quantity = 1 units = 'PC' price = 1650000 currency = 'INR' discnt = 0
+     ( client = sy-mandt itemuid = '1000000002' catergory = 'AUTOMOBILE' classification = 'COMPACTSUV' brand = 'HYUNDAI' item = 'HYUNDAI CRETA S PLUS KNIGHT'
+       retpolicy = '' retperiod = 0   quantity = 1 units = 'EA' price = 1650000 currency = 'INR' discnt = 0
        createdby = sy-uname  createdat = sy-uzeit lastchangedby = sy-uname   lastchangedat = sy-uzeit local_last_changed_at = sy-uzeit )
 
 
      ( client = sy-mandt itemuid = '1000000003' catergory = 'APPAREL' classification = 'CLOTHING' brand = 'WROGN' item = 'WROGN BLUE JEANS - 34'
-       retpolicy = 'X' retperiod = 10   quantity = 1 units = 'PC' price = 1950 currency = 'INR' discnt = 5
+       retpolicy = 'X' retperiod = 10   quantity = 2 units = 'PC' price = 1950 currency = 'INR' discnt = 5
+       createdby = sy-uname  createdat = sy-uzeit lastchangedby = sy-uname   lastchangedat = sy-uzeit local_last_changed_at = sy-uzeit )
+
+     ( client = sy-mandt itemuid = '1000000004' catergory = 'ELECTRONICS' classification = 'MOBILES' brand = 'SONY' item = 'XPERIA U'
+       retpolicy = '' retperiod = 0   quantity = 1 units = 'PC' price = 1199 currency = 'USD' discnt = 0
+       createdby = sy-uname  createdat = sy-uzeit lastchangedby = sy-uname   lastchangedat = sy-uzeit local_last_changed_at = sy-uzeit )
+
+     ( client = sy-mandt itemuid = '1000000005' catergory = 'APPAREL' classification = 'FOOTWEAR' brand = 'WOODLAND' item = 'A98TD SHOE'
+       retpolicy = 'X' retperiod = 30   quantity = 1 units = 'PC' price = 299 currency = 'USD' discnt = 5
        createdby = sy-uname  createdat = sy-uzeit lastchangedby = sy-uname   lastchangedat = sy-uzeit local_last_changed_at = sy-uzeit )
 
      ).
@@ -42,9 +50,8 @@ CLASS zcl_shopping_data_gen IMPLEMENTATION.
 
     IF gt_shop IS NOT INITIAL.
 
-*    data(gr_obj) = new zcl_shopping_data_gen(  ).
-
       MODIFY zshopping FROM TABLE @gt_shop.
+
       COMMIT WORK.
 
     ENDIF.

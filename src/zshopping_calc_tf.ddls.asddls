@@ -12,9 +12,14 @@ returns {
   retperiod             : abap.char( 10 );
   quantity              : abap.quan(13,3);
   units                 : abap.unit(3);
+  @EndUserText.label: 'Price per unit'
   price                 : abap.curr(23,2);
   currency              : abap.cuky;
+  @EndUserText.label: 'Discount'
   discnt                : abap.int1;
+  @EndUserText.label: 'Total Reduced price'
+  redu_price            : abap.curr( 23, 2 );
+  @EndUserText.label: 'Total Final price'
   final_price           : abap.curr( 23, 2 );
 //  createdby             : syuname;
 //  createdat             : timestampl;
