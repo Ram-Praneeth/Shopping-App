@@ -37,11 +37,11 @@ CLASS zcl_shopping_tf IMPLEMENTATION.
                     concat(concat(retperiod,' '),'days') as retperiod,
                     quantity,units,price,currency,discnt,
                     quantity * red_amt as redu_price,
-                    CASE
+                    case
                       when discnt = 0 then price
-                      ELSE quantity * ( price - red_amt )
-                    END as final_price
+                      else quantity * ( price - red_amt )
+                    end as final_price
                     from :lt_data;
-  ENDMETHOD.
+  endmethod.
 
 ENDCLASS.

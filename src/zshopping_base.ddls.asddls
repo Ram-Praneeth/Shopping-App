@@ -5,7 +5,7 @@
 define view zshopping_base
   as select from zshopping
 {
-  //key client,
+      //key client,
   key itemuid,
   key catergory,
   key classification,
