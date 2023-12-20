@@ -5,19 +5,23 @@
 define view zshopping_base
   as select from zshopping
 {
-      //key client,
-  key itemuid,
-  key catergory,
+  key itemid,
+  key category,
   key classification,
       item,
+      itemtyp,
       brand,
-      retpolicy,
-      retperiod,
-      @Semantics.quantity.unitOfMeasure: 'units'
       quantity,
       units,
-      @Semantics.amount.currencyCode: 'currency'
+      stock_chk,
       price,
       currency,
-      discnt
+      discnt,
+      retpolicy,
+      retperiod,
+      createdby,
+      createdat,
+      lastchangedby,
+      lastchangedat,
+      local_last_changed_at
 }
