@@ -1,8 +1,13 @@
-@AbapCatalog.sqlViewName: 'ZSHOPPING_BASEV'
-@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Shopping view'
-define view zshopping_base
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}   
+define view entity zshopping_base
   as select from zshopping
 {
   key itemid,
@@ -11,9 +16,11 @@ define view zshopping_base
       item,
       itemtyp,
       brand,
+      @Semantics.quantity.unitOfMeasure: 'units'
       quantity,
       units,
       stock_chk,
+      @Semantics.amount.currencyCode: 'currency'
       price,
       currency,
       discnt,
